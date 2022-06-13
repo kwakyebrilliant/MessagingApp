@@ -62,8 +62,33 @@ const Auth = () => {
                                 />
                             </div>
                         )}
+                        <div className="auth__form-container_fields-content_input">
+                                <label htmlFor="password">Password</label>
+                                <input 
+                                    name="password" 
+                                    type="password"
+                                    placeholder="Password"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            {isSignup && (
+                            <div className="auth__form-container_fields-content_input">
+                                <label htmlFor="confirmPassword">Confirm Password</label>
+                                <input 
+                                    name="confirmPassword" 
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            )}
                 
             </form>
+            <div className="auth__form-container_fields-account">
+                
+            </div>
             </div>
         </div>
 
