@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
 import signinImage from '../assets/signup.jpg';
+
 
 
 const Auth = () => {
@@ -14,13 +15,14 @@ const Auth = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
     }
 
-  return (
-    <div lassName="auth__form-container">
-        <div className="auth__form-container_fields">
-            <div className="auth__form-container_fields-content">
-            <p>{isSignup ? 'Sign Up' : 'Sign In'}</p>
-            <form onSubmit={() => {}}>
-                {isSignup && (
+
+    return (
+        <div className="auth__form-container">
+            <div className="auth__form-container_fields">
+                <div className="auth__form-container_fields-content">
+                    <p>{isSignup ? 'Sign Up' : 'Sign In'}</p>
+                    <form onSubmit={() => {}}>
+                        {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="fullName">Full Name</label>
                                 <input 
@@ -31,8 +33,8 @@ const Auth = () => {
                                     required
                                 />
                             </div>
-                )}
-                <div className="auth__form-container_fields-content_input">
+                        )}
+                        <div className="auth__form-container_fields-content_input">
                             <label htmlFor="username">Username</label>
                                 <input 
                                     name="username" 
@@ -41,8 +43,8 @@ const Auth = () => {
                                     onChange={handleChange}
                                     required
                                 />
-                </div>
-                {isSignup && (
+                            </div>
+                        {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="phoneNumber">Phone Number</label>
                                 <input 
@@ -53,8 +55,8 @@ const Auth = () => {
                                     required
                                 />
                             </div>
-                    )}
-                    {isSignup && (
+                        )}
+                        {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="avatarURL">Avatar URL</label>
                                 <input 
@@ -76,7 +78,7 @@ const Auth = () => {
                                     required
                                 />
                             </div>
-                            {isSignup && (
+                        {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="confirmPassword">Confirm Password</label>
                                 <input 
@@ -88,10 +90,10 @@ const Auth = () => {
                                 />
                             </div>
                             )}
-                
-            </form>
-            <div className="auth__form-container_fields-account">
-            <p>
+                        
+                    </form>
+                    <div className="auth__form-container_fields-account">
+                        <p>
                             {isSignup
                              ? "Already have an account?" 
                              : "Don't have an account?"
@@ -100,12 +102,15 @@ const Auth = () => {
                              {isSignup ? 'Sign In' : 'Sign Up'}
                              </span>
                         </p>
+                    </div>
+                </div> 
             </div>
+            <div className="auth__form-container_image">
+                <img src={signinImage} alt="sign in" />
             </div>
         </div>
+    )
+     }
 
-    </div>
-  )
-}
 
-export default Auth;
+export default Auth
